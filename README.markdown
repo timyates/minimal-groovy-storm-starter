@@ -7,3 +7,5 @@ To get started, simply [download the latest version](http://www.gradle.org/downl
     gradle run
 
 All dependencies will be fetched, and the wordcount example will run.
+
+This has only so-far been confirmed as working on a local topology, I haven't yet tried it on a cluster.
