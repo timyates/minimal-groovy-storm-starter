@@ -1,4 +1,4 @@
-group 'org.acbb.storm'
+group 'timyates'
 description '''A test of the Storm API to see how much memory it takes to analyse reads'''
 version '0.1'
 
