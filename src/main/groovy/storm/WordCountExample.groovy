@@ -23,19 +23,18 @@ import backtype.storm.utils.Utils
  */
 
 public class WordCountExample {
-    public static void main(String[] args) throws Exception {
-     
+    static main( args ) {
         StormTopology topology = new TopologyBuilder().with {
-            setSpout( "spout", new RandomSentenceSpout(), 5 )
-            setBolt(  "split", new SplitSentenceBolt(), 8 ).shuffleGrouping("spout")
-            setBolt(  "count", new WordCountBolt(), 12 ).fieldsGrouping("split", new Fields("word") )
+            setSpout( 'spout', new RandomSentenceSpout(), 5  )
+            setBolt(  'split', new SplitSentenceBolt(),   8  ).shuffleGrouping( 'spout')
+            setBolt(  'count', new WordCountBolt(),       12 ).fieldsGrouping( 'split', new Fields( 'word' ) )
             createTopology()
         }
 
         Config conf = new Config()
         conf.debug = true
         
-        if( args?.length ) {
+        if( args ) {
             conf.numWorkers = 3
             StormSubmitter.submitTopology( args[ 0 ], conf, topology )
         }
@@ -43,7 +42,7 @@ public class WordCountExample {
             conf.maxTaskParallelism = 3
 
             LocalCluster cluster = new LocalCluster()
-            cluster.submitTopology( "word-count", conf, topology )
+            cluster.submitTopology( 'word-count', conf, topology )
         
             Thread.sleep( 10000 )
 
@@ -55,11 +54,11 @@ public class WordCountExample {
 class RandomSentenceSpout extends BaseRichSpout {
     SpoutOutputCollector collector
     Random rand
-    List sentences = [ "the cow jumped over the moon",
-                       "an apple a day keeps the doctor away",
-                       "four score and seven years ago",
-                       "snow white and the seven dwarfs",
-                       "i am at two with nature" ]
+    List sentences = [ 'the cow jumped over the moon',
+                       'an apple a day keeps the doctor away',
+                       'four score and seven years ago',
+                       'snow white and the seven dwarfs',
+                       'i am at two with nature' ]
 
     @Override
     public void open(Map conf, TopologyContext context, SpoutOutputCollector collector) {
@@ -81,14 +80,14 @@ class RandomSentenceSpout extends BaseRichSpout {
 
     @Override
     public void declareOutputFields( OutputFieldsDeclarer declarer ) {
-        declarer.declare( new Fields( "word" ) )
+        declarer.declare( new Fields( 'word' ) )
     }
 }
 
 class SplitSentenceBolt extends BaseBasicBolt {
     @Override
     public void declareOutputFields( OutputFieldsDeclarer declarer ) {
-        declarer.declare( new Fields( "word" ) )
+        declarer.declare( new Fields( 'word' ) )
     }
 
     @Override
@@ -106,6 +105,7 @@ class SplitSentenceBolt extends BaseBasicBolt {
 }
 
 class WordCountBolt extends BaseBasicBolt {
+    // Can't use withDefault { 0 } as it is then not Serializable
     Map<String, Integer> counts = [:]
 
     @Override
@@ -118,7 +118,7 @@ class WordCountBolt extends BaseBasicBolt {
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
-        declarer.declare( new Fields( "word", "count" ) )
+        declarer.declare( new Fields( 'word', 'count' ) )
     }
 }
 
