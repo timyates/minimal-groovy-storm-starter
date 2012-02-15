@@ -1,0 +1,37 @@
+group 'org.acbb.storm'
+description '''A test of the Storm API to see how much memory it takes to analyse reads'''
+version '0.1'
+
+targetCompatibility: 1.6
+
+apply plugin:'groovy'
+apply plugin:'application'
+
+mainClassName = 'storm.WordCountExample'
+
+repositories {
+  mavenCentral()
+  maven {
+    name 'github-releases'
+    url  'http://oss.sonatype.org/content/repositories/github-releases/'
+  }
+  maven {
+    name 'clojars.org'
+    url  'http://clojars.org/repo'
+  }
+  maven {
+    name 'twitter4j'
+    url  'http://twitter4j.org/maven2'
+  }
+}
+
+dependencies {
+  groovy      'org.codehaus.groovy:groovy:1.8.6'
+  compile     'storm:storm:0.7.0-rc'
+  compile     'org.twitter4j:twitter4j-core:2.2.5-SNAPSHOT'
+  compile     'org.twitter4j:twitter4j-stream:2.2.5-SNAPSHOT'
+  compile     'org.clojure:clojure:1.2.0'
+  compile     'org.clojure:clojure-contrib:1.2.0'
+  compile     'com.googlecode.json-simple:json-simple:1.1'
+  testCompile 'junit:junit:3.8.1'
+}
