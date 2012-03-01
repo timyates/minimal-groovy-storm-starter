@@ -7,7 +7,8 @@ targetCompatibility: 1.6
 apply plugin:'groovy'
 apply plugin:'application'
 
-mainClassName = 'storm.WordCountExample'
+defaultTasks 'wordCount'
+
 
 repositories {
   mavenCentral()
@@ -21,4 +22,9 @@ dependencies {
   groovy      'org.codehaus.groovy:groovy:1.8.6'
   compile     'storm:storm:0.7.0-rc'
   testCompile 'junit:junit:3.8.1'
+}
+
+task( wordCount, group:'In-process Storm Example', type:JavaExec ) {
+  classpath = sourceSets.main.runtimeClasspath
+  main = 'storm.WordCountExample'
 }
