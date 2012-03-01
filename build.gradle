@@ -9,7 +9,6 @@ apply plugin:'application'
 
 defaultTasks 'wordCount'
 
-
 repositories {
   mavenCentral()
   maven {
@@ -21,10 +20,16 @@ repositories {
 dependencies {
   groovy      'org.codehaus.groovy:groovy:1.8.6'
   compile     'storm:storm:0.7.0-rc'
+  compile     'org.slf4j:slf4j-log4j12:1.6.4'
   testCompile 'junit:junit:3.8.1'
 }
 
 task( wordCount, group:'In-process Storm Example', type:JavaExec ) {
   classpath = sourceSets.main.runtimeClasspath
   main = 'storm.WordCountExample'
+}
+
+task( poetry, group:'In-process Storm Example', type:JavaExec ) {
+  classpath = sourceSets.main.runtimeClasspath
+  main = 'storm.PoetryExample'
 }
