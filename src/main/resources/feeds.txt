@@ -1,5 +1,11 @@
 http://www.guardian.co.uk/rss
 http://www.guardian.co.uk/rssfeed/0,,11,00.xml
+# Inspired by "Ruby Poetry" by Andrew McDonough
+# http://blog.andrewmcdonough.com/blog/2012/02/23/ruby-poetry/
+#
+# This file is shamelessly lifted from his github project that goes with that blog entry:
+# https://github.com/andrewmcdonough/ruby-poetry
+#
 http://www.guardian.co.uk/rssfeed/0,,12,00.xml
 http://www.guardian.co.uk/rssfeed/0,,5,00.xml
 http://www.guardian.co.uk/rssfeed/0,,24,00.xml
@@ -56,21 +62,22 @@ http://www.telegraph.co.uk/newsfeed/rss/property.xml
 http://www.telegraph.co.uk/newsfeed/rss/sport.xml
 http://www.telegraph.co.uk/newsfeed/rss/sport-football.xml
 http://www.telegraph.co.uk/newsfeed/rss/sport-cricket.xml
-#http://dailyexpress.co.uk/rss/sport.xml
-#http://dailyexpress.co.uk/rss/features.xml
-#http://dailyexpress.co.uk/rss/expressyourself.xml
-#http://dailyexpress.co.uk/rss/gardening.xml
-#http://dailyexpress.co.uk/rss/food.xml
-#http://dailyexpress.co.uk/rss/entertainment.xml
-#http://dailyexpress.co.uk/rss/music.xml
-#http://dailyexpress.co.uk/rss/money.xml
-#http://dailyexpress.co.uk/rss/city.xml
-#http://dailyexpress.co.uk/rss/yourmoney.xml
-#http://dailyexpress.co.uk/rss/columnists.xml
-#http://dailyexpress.co.uk/rss/motoring.xml
-#http://dailyexpress.co.uk/rss/travel.xml
-#http://dailyexpress.co.uk/rss/competitions.xml
-#http://dailyexpress.co.uk/rss/blogs.xml
+# Not working at time of testing...  Commented out
+# http://dailyexpress.co.uk/rss/sport.xml
+# http://dailyexpress.co.uk/rss/features.xml
+# http://dailyexpress.co.uk/rss/expressyourself.xml
+# http://dailyexpress.co.uk/rss/gardening.xml
+# http://dailyexpress.co.uk/rss/food.xml
+# http://dailyexpress.co.uk/rss/entertainment.xml
+# http://dailyexpress.co.uk/rss/music.xml
+# http://dailyexpress.co.uk/rss/money.xml
+# http://dailyexpress.co.uk/rss/city.xml
+# http://dailyexpress.co.uk/rss/yourmoney.xml
+# http://dailyexpress.co.uk/rss/columnists.xml
+# http://dailyexpress.co.uk/rss/motoring.xml
+# http://dailyexpress.co.uk/rss/travel.xml
+# http://dailyexpress.co.uk/rss/competitions.xml
+# http://dailyexpress.co.uk/rss/blogs.xml
 http://www.mirror.co.uk/news/rss.xml
 http://www.mirror.co.uk/news/topstories/rss.xml
 http://www.mirror.co.uk/news/latest/rss.xml
