@@ -4,8 +4,14 @@ It is basically a copy of the word-count example in the [Storm starter](https://
 
 To get started, simply [download the latest version](http://www.gradle.org/downloads) of Gradle, cd to the location of this project and type
 
-    gradle run
+    gradle
 
 All dependencies will be fetched, and the wordcount example will run.
 
-This has only so-far been confirmed as working on a local topology, I haven't yet tried it on a cluster.
+To list all current examples, type:
+
+    gradle tasks
+
+And the examples will be listed under the heading `In-process Storm Example tasks`
+
+I am looking into some examples with a working cluster, but this requires me to set up a working cluster first ;-)
